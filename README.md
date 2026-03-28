@@ -1,11 +1,3 @@
-ML-Fundamentals-p1 is a practical, no-BS machine learning repository focused on building real-world intuition through hands-on examples, clean code, and structured learning notes.
-
-It bridges the gap between theory and application by walking through core ML concepts, model building, evaluation, and optimisation — with a focus on understanding why things work, not just how to run them.
-
-Designed for developers who want to move from beginner → confident practitioner with a strong foundation for advanced topics like deep learning and predictive systems.
-
-📘 README.md (full)
-
 # ML-Fundamentals-p1
 
 A practical, straight-forward machine learning repository focused on building real understanding — not just running tutorials.
