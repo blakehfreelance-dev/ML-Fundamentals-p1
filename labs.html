@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Fundamentals - Complete Course</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .sidebar {
+      width: 280px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .main-content {
+      margin-left: 280px;
+      padding: 40px;
+      flex: 1;
+    }
+    h1, h2, h3 { color: #2c3e50; }
+    .nav-link {
+      color: #bdc3c7;
+      text-decoration: none;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: #34495e;
+      color: white;
+    }
+    .part {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 15px 0;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th { background: #f1f1f1; }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .lab {
+      background: #e8f5e9;
+      border-left: 5px solid #27ae60;
+      padding: 20px;
+      border-radius: 6px;
+    }
+    .header {
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>ML Fundamentals</h1>
+    <p>A Practical Machine Learning Course for Everyone</p>
+  </div>
+
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <h2 style="color:white; margin-top:0;">Course Contents</h2>
+      <a href="#p0" class="nav-link">0. Prerequisites & Learning Guide</a>
+      <a href="#p1" class="nav-link">1. What is Machine Learning?</a>
+      <a href="#p2" class="nav-link">2. Types of Machine Learning</a>
+      <a href="#p3" class="nav-link">3. ML Workflow / Pipeline</a>
+      <a href="#p4" class="nav-link">4. Key Concepts & Terminology</a>
+      <a href="#p5" class="nav-link">5. Supervised Learning Algorithms</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <h1 id="p0">0. Prerequisites & Learning Guide</h1>
+      <div class="part">
+        <p><strong>You don’t need to be a math or science expert.</strong> This course focuses on practical learning.</p>
+        
+        <h3>Must-Have Skills</h3>
+        <ul>
+          <li>Basic Python (variables, loops, functions)</li>
+          <li>High-school level math only</li>
+        </ul>
+
+        <div class="lab">
+          <h3>Lab 0: Setup Your Environment</h3>
+          <pre><code>conda create -n ml-fundamentals python=3.11
+conda activate ml-fundamentals
+pip install numpy pandas matplotlib seaborn scikit-learn jupyter</code></pre>
+        </div>
+      </div>
+
+      <h1 id="p1">1. What is Machine Learning (ML)?</h1>
+      <div class="part">
+        <p><strong>Machine learning (ML)</strong> is a way to train software, called a model, to make predictions or generate content using data.</p>
+        <p>ML systems can be categorized as supervised, unsupervised, reinforcement, or generative AI.</p>
+
+        <div class="lab">
+          <h3>Lab 1: Your First Look at Data</h3>
+          <pre><code>import seaborn as sns
+df = sns.load_dataset('iris')
+print(df.head())
+sns.pairplot(df, hue='species')</code></pre>
+        </div>
+      </div>
+
+      <h1 id="p2">2. Types of Machine Learning</h1>
+      <div class="part">
+        <h3>1. Supervised Learning</h3>
+        <p>Uses labeled data to make predictions (Regression & Classification).</p>
+        <h3>2. Unsupervised Learning</h3>
+        <p>Finds patterns in unlabeled data (Clustering, Dimensionality Reduction).</p>
+        <h3>3. Reinforcement Learning</h3>
+        <p>Learning through rewards and penalties.</p>
+        <h3>4. Generative AI</h3>
+        <p>Creates new content (text, images, music).</p>
+
+        <div class="lab">
+          <h3>Lab 2: Try All Types</h3>
+          <pre><code>from sklearn.ensemble import RandomForestClassifier
+from sklearn.cluster import KMeans</code></pre>
+        </div>
+      </div>
+
+      <h1 id="p3">3. Machine Learning Workflow (Pipeline)</h1>
+      <div class="part">
+        <ol>
+          <li>Problem Definition</li>
+          <li>Data Collection</li>
+          <li>Exploratory Data Analysis (EDA)</li>
+          <li>Data Preprocessing</li>
+          <li>Model Training</li>
+          <li>Evaluation</li>
+          <li>Deployment & Monitoring</li>
+        </ol>
+
+        <div class="lab">
+          <h3>Lab 3: End-to-End Mini Pipeline</h3>
+          <pre><code>from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor</code></pre>
+        </div>
+      </div>
+
+      <h1 id="p4">4. Key Concepts & Terminology</h1>
+      <div class="part">
+        <h3>Core Concepts</h3>
+        <ul>
+          <li>Features vs Target</li>
+          <li>Overfitting vs Underfitting</li>
+          <li>Bias-Variance Tradeoff</li>
+          <li>Train / Validation / Test Split</li>
+        </ul>
+
+        <div class="lab">
+          <h3>Lab 4: Overfitting Demo</h3>
+          <pre><code>for depth in [1, 5, 20]:
+    model = DecisionTreeRegressor(max_depth=depth)</code></pre>
+        </div>
+      </div>
+
+      <h1 id="p5">5. Supervised Learning Algorithms</h1>
+      <div class="part">
+        <h3>Regression & Classification Algorithms</h3>
+        <table>
+          <tr><th>Algorithm</th><th>Best For</th><th>Type</th></tr>
+          <tr><td>Linear Regression</td><td>Simple predictions</td><td>Regression</td></tr>
+          <tr><td>Random Forest</td><td>Most tabular data</td><td>Both</td></tr>
+          <tr><td>Gradient Boosting (XGBoost)</td><td>High accuracy</td><td>Both</td></tr>
+        </table>
+
+        <div class="lab">
+          <h3>Lab 5: Compare Algorithms</h3>
+          <pre><code>models = {"Logistic": LogisticRegression(), "RandomForest": RandomForestClassifier()}</code></pre>
+        </div>
+      </div>
+
+      <hr>
+      <p style="text-align:center; color:#777;">
+        ML Fundamentals Course • Made for practical learning • Updated 2026
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
